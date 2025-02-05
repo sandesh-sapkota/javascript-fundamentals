@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandy CodeHub</title>
+</head>
+<body style="background-color: rgb(25, 24, 24); color: aliceblue;">
+
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+    <script>
+        function addLanguage(langName){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName));
+            document.querySelector('.language').appendChild(li) 
+        }
+
+        addLanguage("python");
+        addLanguage("java");
+        addLanguage("flutter");
+
+        //Edit
+        const secondLang = document.querySelector("li:nth-child(2)");
+        const newLi = document.createElement('li');
+        newLi.appendChild(document.createTextNode('Mojo'));
+        secondLang.replaceWith(newLi)
+
+
+    </script>
+</body>
+</html>
