@@ -26,9 +26,12 @@
         const secondLang = document.querySelector("li:nth-child(2)");
         const newLi = document.createElement('li');
         newLi.appendChild(document.createTextNode('Mojo'));
-        secondLang.replaceWith(newLi)
+        secondLang.replaceWith(newLi);
 
-
+        //remove
+        const lastLang= document.querySelector('li:last-child');
+        lastLang.remove();
+        
     </script>
 </body>
 </html>
