@@ -204,3 +204,83 @@ form.addEventListener('submit',(e)=>{
     
 })
 ```
+
+### Project 3: Digital Clock
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="center">
+        <div id="banner"><span>Your Local time:</span></div>
+        <div id="clock"></div>
+    </div>
+</body>
+</html>
+```
+
+```CSS
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(56, 53, 53);
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+#clock{
+    width: 130px;
+    height: 55px;
+    background-color: orange;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+html,body{
+    height: 100%;
+}
+
+span{
+    font-size: x-large;
+    
+
+}
+
+.center{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+```
+
+```Javascript
+const clock= document.querySelector('#clock')
+
+// let date = new Date()
+// console.log(date.toLocaleTimeString());
+
+setInterval(()=>{
+    let date = new Date()
+clock.innerHTML= date.toLocaleTimeString();
+},1000);
+
+
+```
