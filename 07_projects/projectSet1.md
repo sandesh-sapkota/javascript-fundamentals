@@ -88,3 +88,119 @@ buttons.forEach((button)=>{
 })
 
 ```
+
+
+### Project 2: BMI Calculator
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form>
+            <p><label for="height">Height in CM:</label><input type="number" name="height" id="height"></p>
+            <p><label for="weight">Weight in KG:</label><input type="number" name="weight" id="weight"></p>
+            <button>Calculate</button>
+            <div class="results"></div>
+            <div class="weight-guide">
+                <h3>BMI Weight Guide</h3>
+                <p>Under Weight =  Less than 18.6</p>
+                <p>Normal Range = 18.6 to 24.9</p>
+                OverWeight = Greater than 24.9
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+```
+
+```CSS
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+body{
+    background-color: rgb(136, 136, 136);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+h1{
+    margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.weight-guide{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button{
+    width: 35%;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#height, #weight{
+    height: 25px;
+}
+
+.results{
+    font-weight: 600;
+    color: lightgreen;
+    font-size: 20px;
+}
+```
+
+```Javascript
+const form= document.querySelector('form')
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+
+    const height= parseFloat(document.querySelector('#height').value)
+    const weight= parseFloat(document.querySelector('#weight').value)
+    const results= document.querySelector('.results')
+    
+    if(height ==='' || height<0 || isNaN(height)){
+        results.innerHTML= `Please give a valid height ${height}`
+    }
+    else if(weight ==='' || weight<0 || isNaN(weight)){
+        results.innerHTML= `Please give a valid weight ${weight}`
+    }
+    else{
+        results.innerHTML= `The BMI is: ${(weight/((height/100)**2)).toFixed(2)}`
+    }
+    
+})
+```
