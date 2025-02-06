@@ -1,7 +1,7 @@
 # Projects related to DOM
 
 ## Project Link
-[Click Here] (https://github.com/sandesh-sapkota/javascript-fundamentals/tree/main/06_dom)
+[Click Here] (https://github.com/sandesh-sapkota/javascript-fundamentals/tree/main/07_projects)
 
 ## Solution code
 
