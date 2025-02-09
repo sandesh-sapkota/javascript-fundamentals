@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Code</title>
+    <style>
+        body{
+            background-color: #414141;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sandy EduHub Code</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+        
+    //    setTimeout(()=>{
+    //     console.log('Hi Sandy!');
+    // },2000)
+
+    const saySandy=()=>{
+        console.log('Hi Sandy!');
+    }
+     const timer= setTimeout(saySandy,3000); 
+
+    //  clearTimeout(timer);
+
+
+    const changeText= ()=>{
+        document.querySelector('h1').innerHTML='Om Namaha Shivaya 🙏🏼✨'
+    };
+
+     const textTimer= setTimeout(changeText,3000);
+
+     const button= document.querySelector('#stop')
+     button.addEventListener('click',(e)=>{
+        clearTimeout(textTimer);
+     })
+
+
+   
+    
+    </script>
+</body>
+</html>
