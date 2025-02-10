@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async code</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <script>
+        let counter=1;
+        let interval = setInterval(()=>{
+            console.log(`Remainder ${counter} : Drink Water`);
+            counter++;
+
+            if(counter>5){
+                clearInterval(interval);
+                console.log(`No More Remainders!`);
+                
+            }
+            
+        },2000)
+    </script>
+    
+</body>
+</html>
